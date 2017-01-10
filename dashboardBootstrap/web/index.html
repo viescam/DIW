@@ -1,0 +1,300 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link href="font/css/font-awesome.min.css" rel="stylesheet"/>
+        <script type="text/javascript" src="js/navbar.js" ></script>
+        <script type="text/javascript" src="js/menu.js" ></script>
+        <!--[if lt IE 9]>
+            <script src="html5shiv.js"></script>
+            <script src="respond.js"></script>x
+        <![endif]-->
+    </head>
+    <body>
+        <div class="row">
+        <header class="col-xs-12 header">
+            <div class="col-xs-1 col-sm-hidden">
+                <div class="vertical-menu__icon"></div>
+            </div>
+            <div class="col-xs-11 col-sm-12">
+                <h2 class="title">DASHBOARD</h2>
+            </div>
+        </header>
+        </div>
+        <div class="row">
+            <div class="col-xs-hidden col-sm-1 col-md-2">
+                <aside class="aside-bar">
+                    <ul class="vertical-menu">
+                        <li>
+                            <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--0 vertical-menu__item--folder--close">Item 1</a>
+                            <ul class="vertical-menu--close">
+                                <li>
+                                    <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--folder--close">Sub-item 1</a>
+                                    <ul class="vertical-menu--close">
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 1</li>
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 2</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--folder--close">Sub-item 2</a>
+                                    <ul class="vertical-menu--close">
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 3</li>
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 4</li>
+                                    </ul>
+                                </li>
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 1</li>
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 2</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--0 vertical-menu__item--folder--close">Item 2</a>
+                            <ul class="vertical-menu--close">
+                                <li>
+                                    <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--folder--close">Sub-item 3</a>
+                                    <ul class="vertical-menu--close">
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 3</li>
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 4</li>
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 5</li>
+                                    </ul>
+                                </li>
+                                <li class="vertical-menu__item vertical-menu__item--document vertical-menu__item--1"> Thing 3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--0 vertical-menu__item--folder--close">Item 3</a>
+                            <ul class="vertical-menu--close">
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 4</li>
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 5</li>
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 6</li>
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 7</li>
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 8</li>
+                                <li class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--document"> Thing 9</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--0 vertical-menu__item--folder--close">Item 4</a>
+                            <ul class=" vertical-menu--close">
+                                <li>
+                                    <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--folder--close">Sub-item 4</a>
+                                    <ul class="vertical-menu--close">
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 6</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a onclick=abrirCerrar(this) class="vertical-menu__item vertical-menu__item--1 vertical-menu__item--folder--close">Sub-item 5</a>
+                                    <ul class="vertical-menu--close">
+                                        <li class="vertical-menu__item vertical-menu__item--2 vertical-menu__item--document"> Page 7</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="col-xs-12 col-sm-11 col-md-10">
+                <main>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="alert alert-success text-center">
+                                <strong>Menu Principal</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="panel panel-success">
+                                <header class="panel-heading">
+                                    Cabecera
+                                </header>
+                                <div class="panel-body">
+                                    Contenido<br>
+                                    Mas contenido
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="panel panel-warning">
+                                <header class="panel-heading">
+                                    Cabecera
+                                </header>
+                                <div class="panel-body">
+                                    Contenido<br>
+                                    Mas contenido
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-sm-offset-1">
+                            <div class="alert alert-success">
+                                SUCCESS
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                            <div class="alert alert-warning">
+                                WARNING
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-3 col-sm-offset-1">
+                            <div class="alert alert-info">
+                                Mensaje
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-2 col-sm-offset-1">
+                            <div class="alert alert-warning">
+                                Mensaje
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-sm-offset-1">
+                            <div class="alert alert-danger">
+                                Mensaje
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="alert alert-info text-center">
+                                <h2>PREDICCIÓN METEOROLÓGICA</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <div class="panel panel-danger text-center">
+                                <header class="panel-heading">
+                                    Lunes
+                                </header>
+                                <div class="panel-body panel-body-intermedio panel-body-intermedio--danger">
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png" alt="nublado" />
+                                </div>
+                                <div class="panel-body">
+                                    5 - 15 ºC
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <div class="panel panel-danger text-center">
+                                <header class="panel-heading">
+                                    Martes
+                                </header>
+                                <div class="panel-body panel-body-intermedio panel-body-intermedio--danger">
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png" alt="nublado" />
+                                </div>
+                                <div class="panel-body">
+                                    4 - 15 ºC
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <div class="panel panel-success text-center">
+                                <header class="panel-heading">
+                                    Miercoles
+                                </header>
+                                <div class="panel-body panel-body-intermedio panel-body-intermedio--success">
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="soleado" />
+                                </div>
+                                <div class="panel-body">
+                                    9 - 21 ºC
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <div class="panel panel-info text-center">
+                                <header class="panel-heading">
+                                    Jueves
+                                </header>
+                                <div class="panel-body panel-body-intermedio panel-body-intermedio--info">
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="nubes y claros" /> 
+                                </div>
+                                <div class="panel-body">
+                                    8 - 20 ºC
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <div class="panel panel-success text-center">
+                                <header class="panel-heading">
+                                    Viernes
+                                </header>
+                                <div class="panel-body panel-body-intermedio panel-body-intermedio--success">
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="soleado" />
+                                </div>
+                                <div class="panel-body">
+                                    11 - 28 ºC
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-2 col-lg-1">
+                            <div class="panel panel-success text-center">
+                                <header class="panel-heading">
+                                    Sabado
+                                </header>
+                                <div class="panel-body panel-body-intermedio panel-body-intermedio--success">
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="soleado" />
+                                </div>
+                                <div class="panel-body">
+                                    9 - 27 ºC
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-2 col-lg-1">
+                            <div class="panel panel-danger text-center">
+                                <header class="panel-heading">
+                                    Domingo
+                                </header>
+                                <div class="panel-body panel-body-intermedio panel-body-intermedio--danger">
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png" alt="nublado" />
+                                </div>
+                                <div class="panel-body">
+                                    8 - 17 ºC
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-2">
+                            <a href="https://www.google.es/" class="social-network_box--Linkedin">
+                                <img class="social-network_icon" alt="LinedIn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/2000px-Linkedin_icon.svg.png"  />
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <a href="https://www.google.es/" class="social-network_box--GooglePlus">
+                                <img class="social-network_icon" alt="Google Plus" src="http://icon-icons.com/icons2/317/PNG/512/social-google-plus-icon_34351.png"  />
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <a href="https://www.google.es/" class="social-network_box--FB">
+                                <img class="social-network_icon" alt="Facebook" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/220px-F_icon.svg.png"  />
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <a href="https://www.google.es/" class="social-network_box--Youtube">
+                                <img class="social-network_icon" alt="Youtube" src="http://icon-icons.com/icons2/535/PNG/512/Youtube-Icon_icon-icons.com_52898.png"  />
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-sm-2">
+                            <a href="https://www.google.es/" class="social-network_box--twitter">
+                                <img class="social-network_icon" alt="twitter" src="http://icon-icons.com/icons2/622/PNG/512/twitter-logo_icon-icons.com_57059.png"  />
+                            </a>
+                        </div>                
+                        <div class="col-xs-4 col-sm-2">
+                            <a href="https://www.google.es/" class="social-network_box--Pinterest">
+                                <img class="social-network_icon" alt="Pinterest" src="http://download.seaicons.com/download/i76680/xenatt/the-circle/xenatt-the-circle-app-pinterest.ico"  />
+                            </a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>    
+    </body>
+</html>

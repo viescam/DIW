@@ -1,5 +1,5 @@
-function Puzzle(numPiezas){
-    this.numPiezas = numPiezas;
+function Puzzle(idPiezas){
+    this.idPiezas = idPiezas;
     var estado;
     reset();
 };
@@ -11,75 +11,75 @@ Puzzle.prototype.reset()=function(){
         this.estado.push(-(i+1));
     }
 };
-Puzzle.prototype.getNumPosicionPiezaEnCaja=function(numPieza){
-    if (numPieza < 1){
+Puzzle.prototype.getNumPosicionPiezaEnCaja=function(idPieza){
+    if (idPieza < 1){
         throw "El numero de pieza debe ser mayor de 0";
     }
-    if( numPieza > this.numPiezas){
-        throw "El numero de pieza debe ser menor de " + this.numPiezas;
+    if( idPieza > this.idPiezas){
+        throw "El numero de pieza debe ser menor de " + this.idPiezas;
     }
-    if(this.isColocadaPieza(numPieza)){
+    if(this.isColocadaPieza(idPieza)){
          throw "La pieza no está en la caja";
     }
-    return -this.estado[numPieza-1];
+    return -this.estado[idPieza-1];
 };
-Puzzle.prototype.getNumPosicionPiezaEnTablero=function(numPieza){
-    if (numPieza < 1){
+Puzzle.prototype.getNumPosicionPiezaEnTablero=function(idPieza){
+    if (idPieza < 1){
         throw "El numero de pieza debe ser mayor de 0";
     }
-    if( numPieza > this.numPiezas){
-        throw "El numero de pieza debe ser menor de " + this.numPiezas;
+    if( idPieza > this.idPiezas){
+        throw "El numero de pieza debe ser menor de " + this.idPiezas;
     }
-    if(this.isQuitadaPieza(numPieza)){
+    if(this.isQuitadaPieza(idPieza)){
          throw "La pieza no está en en el tablero";
     }
-    return this.estado[numPieza-1];
+    return this.estado[idPieza-1];
 };
 
 Puzzle.prototype.getNumPiezas = function(){
-    return this.numPiezas;
+    return this.idPiezas;
 };
 
-Puzzle.prototype.isLibreHuecoTablero = function (posicion){
+Puzzle.prototype.isLibreHuecoTablero = function (idHuecoTablero){
     i=0;
     while(i<this.estado.length){
-        if(this.estado[i]===posicion)
+        if(this.estado[i]===idHuecoTablero)
             return true;
         i++;
     }
     return false;
 };
-Puzzle.prototype.isPermitidoColocarPieza = function (numPieza, posicion){
-    if(this.isColocadaPieza(numPieza))
+Puzzle.prototype.isPermitidoColocarPieza = function (idPieza, idHuecoTablero){
+    if(this.isColocadaPieza(idPieza))
         return false;
-    return this.isLibreHuecoTablero(posicion)   
+    return this.isLibreHuecoTablero(idHuecoTablero)   
 };
-Puzzle.prototype.isPermitidoQuitarPieza = function (numPieza){
-    return this.isColocada(numPieza)
+Puzzle.prototype.isPermitidoQuitarPieza = function (idPieza){
+    return this.isColocada(idPieza)
 };
-Puzzle.prototye.isColocadaPieza= function(numPieza){
-    if(this.estado[numPieza-1]>0)
+Puzzle.prototye.isColocadaPieza= function(idPieza){
+    if(this.estado[idPieza-1]>0)
         return true;
     else
         return false;
 };
 
-Puzzle.prototye.isQuitadaPieza= function(numPieza){
-    if(this.estado[numPieza-1]<0)
+Puzzle.prototye.isQuitadaPieza= function(idPieza){
+    if(this.estado[idPieza-1]<0)
         return true;
     else
         return false;
 };
 
-Puzzle.prototye.colocarPieza= function(numPieza,posicion){
-    if(this.isPermitidoColocarPieza(numPieza,posicion))
-        this.estado[numPieza-1]=posicion;
+Puzzle.prototye.colocarPieza= function(idPieza,idHuecoTablero){
+    if(this.isPermitidoColocarPieza(idPieza,idHuecoTablero))
+        this.estado[idPieza-1]=idHuecoTablero;
     else
         throw "La pieza no se puede colocar";
 };
-Puzzle.prototype.quitarPieza= function(numPieza){
-    if(this.isPermitidoQuitarPieza(numPieza))
-        this.estado[numPieza-1]=-numPieza;
+Puzzle.prototype.quitarPieza= function(idPieza){
+    if(this.isPermitidoQuitarPieza(idPieza))
+        this.estado[idPieza-1]=-idPieza;
     else
         throw "La pieza no se puede quitar";
 };
@@ -93,6 +93,7 @@ Puzzle.prototype.isResuelto = function(){
     return true;
     
 };
+
 
 Puzzle.prototype.onDragStartPiezaSinPoner=function(event){
     event.dataTransfer.setData("text",event.target.id);

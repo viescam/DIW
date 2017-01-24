@@ -1,7 +1,11 @@
 function Puzzle(numPiezas){
-    this.numPiezas = numPiezas;
-    this.estado = [];
-    this.reset();
+    if(numPiezas<1)
+         throw "El numero de piezas debe ser mayor de 0";
+    else{
+        this.numPiezas = numPiezas;
+        this.estado = [];
+        this.reset();
+    }
 };
 
 Puzzle.prototype.reset=function(){
@@ -41,40 +45,67 @@ Puzzle.prototype.getNumPiezas = function(){
 };
 
 Puzzle.prototype.isLibreHuecoTablero = function (idHuecoTablero){
-    i=0;
-    while(i<this.estado.length){
-        if(this.estado[i]===idHuecoTablero)
-            return false;
-        i++;
+    if(idHuecoTablero==0 || idHuecoTablero>this.numPiezas || idHuecoTablero <-this.numPiezas){
+            throw "El numero del hueco de tablero es incorrecto";
+    }else{
+        i=0;
+        while(i<this.estado.length){
+            if(this.estado[i]===idHuecoTablero)
+                return false;
+            i++;
+        }
+        return true;
     }
-    return true;
 };
 Puzzle.prototype.isPermitidoColocarPieza = function (idPieza, idHuecoTablero){
-    if(this.isColocadaPieza(idPieza))
-        return false;
-    if(this.isLibreHuecoTablero(idHuecoTablero))
-        return true;
-    else
-        return false;
+    if(idPieza<1 || idPieza>this.numPiezas){
+        throw "El numero de la pieza es incorrecto";
+    }else{
+        if(idHuecoTablero==0 || idHuecoTablero>this.numPiezas || idHuecoTablero <-this.numPiezas){
+            throw "El numero del hueco de tablero es incorrecto";
+        }
+        else{
+            if(this.isColocadaPieza(idPieza))
+            return false;
+        if(this.isLibreHuecoTablero(idHuecoTablero))
+            return true;
+        else
+            return false;
+        }        
+    }
 };
 Puzzle.prototype.isPermitidoQuitarPieza = function (idPieza){
-    if(this.isQuitadaPieza(idPieza))
-        return false;
-    else
-        return true;
+    if(idPieza<1 || idPieza>this.numPiezas){
+        throw "El numero de la pieza es incorrecto";
+    }else{
+        if(this.isQuitadaPieza(idPieza))
+            return false;
+        else
+            return true;
+    }
+    
 };
 Puzzle.prototype.isColocadaPieza = function(idPieza){
-    if(this.estado[idPieza-1]>0)
-        return true;
-    else
-        return false;
+    if(idPieza<1 || idPieza>this.numPiezas){
+        throw "El numero de la pieza es incorrecto";
+    }else{
+        if(this.estado[idPieza-1]>0)
+            return true;
+        else
+            return false;
+    }
 };
 
 Puzzle.prototype.isQuitadaPieza = function(idPieza){
-    if(this.estado[idPieza-1]<0)
-        return true;
+    if(idPieza<1 || idPieza>this.numPiezas){
+        throw "El numero de la pieza es incorrecto";
+    }else{
+        if(this.estado[idPieza-1]<0)
+            return true;
     else
-        return false;
+            return false; 
+    }
+    
 };
 
 Puzzle.prototype.colocarPieza = function(idPieza,idHuecoTablero){

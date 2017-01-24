@@ -1,5 +1,17 @@
 {
     var puzzle_test=new Puzzle(4);
+    try{
+        puzzle_test.isColocadaPieza(0);
+        alert("ERROR en isColocadaPieza");
+    }catch(ex){
+        
+    }
+}
+
+
+
+{
+    var puzzle_test=new Puzzle(4);
     if(!puzzle_test.isColocadaPieza(1)===false){
         alert("Error en el test de isColocadaPieza");
     }
@@ -60,3 +72,26 @@
         alert("Error en el is Permitido Colocar Pieza");
     }
 }
+
+function assertTrue(sentence,phrase){
+    if(sentence!==true){
+        alert(phrase);
+    }
+}
+
+function assertTrue(sentence,phrase){
+    if(sentence!==false){
+        alert(phrase);
+    }
+}
+
+{
+    var puzzle_test = new Puzzle(4);
+    try{
+        var puzzle_test = new Puzzle(0);
+        alert("");
+    }catch(ex){
+        
+    }
+}
+
